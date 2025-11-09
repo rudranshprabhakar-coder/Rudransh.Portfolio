@@ -7,42 +7,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Thumbnail gallery layout */
-    .work-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .work-gallery a {
-      display: block;
-      width: calc(33.33% - 8px); /* 3 per row, with gap */
-      text-align: center;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      overflow: hidden;
-      transition: transform 0.2s;
-    }
-    .work-gallery a:hover {
-      transform: scale(1.05);
-    }
+  /* Thumbnail gallery layout */
+  .work-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+    justify-content: flex-start;
+  }
+
+  .work-gallery a {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 4px; /* optional spacing inside border */
+    transition: transform 0.2s;
+  }
+
+  .work-gallery a:hover {
+    transform: scale(1.05);
+  }
+
+  .work-gallery img {
+    display: block;
+    max-width: 150px;   /* small, uniform size */
+    max-height: 200px;  /* prevent tall portraits from stretching too much */
+    width: auto;        /* maintain natural aspect ratio */
+    height: auto;       /* maintain natural aspect ratio */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
     .work-gallery img {
-      width: 50%;
-      height: auto;
-      display: block;
+      max-width: 120px;
+      max-height: 160px;
     }
-    /* Responsive adjustments */
-    @media (max-width: 900px) {
-      .work-gallery a {
-        width: calc(50% - 8px); /* 2 per row on medium screens */
-      }
+  }
+
+  @media (max-width: 600px) {
+    .work-gallery img {
+      max-width: 100px;
+      max-height: 140px;
     }
-    @media (max-width: 600px) {
-      .work-gallery a {
-        width: 100%; /* 1 per row on small screens */
-      }
-    }
-  </style>
+  }
+</style>
+
 </head>
 <body>
   <div class="container">

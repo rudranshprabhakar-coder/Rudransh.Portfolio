@@ -1,0 +1,12 @@
+# Ignore typical OS and editor files
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+/.cache
+/.parcel-cache
+.vscode/
+*.log
+
+# Ignore deploy artifacts (if used locally)
+gh-pages/

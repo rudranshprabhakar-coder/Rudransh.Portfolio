@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery and Slideshow</title>
+<style>
+/* ---------- General Styles ---------- */
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ---------- Image Gallery Section ---------- */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.gallery img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Enlarge clicked image */
+.enlarged {
+  display: none;
+}
+
+.enlarged:target {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 10;
+}
+
+.enlarged img {
+  width: 75%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.enlarged a {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* ---------- Slideshow Section ---------- */
+.slideshow {
+  width: 80%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;   /* landscape format */
+  margin: 40px auto;      /* centers it horizontally */
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keeps landscape view clean */
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fade 12s infinite;
+}
+
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 4s; }
+.slideshow img:nth-child(3) { animation-delay: 8s; }
+
+@keyframes fade {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  33% { opacity: 1; }
+  41% { opacity: 0; }
+  100% { opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<h1>📸 Simple Image Gallery</h1>
+
+<div class="gallery">
+  <a href="#img1"><img src="https://picsum.photos/id/1015/400/300" alt="Image 1"></a>
+  <a href="#img2"><img src="https://picsum.photos/id/1025/400/300" alt="Image 2"></a>
+  <a href="#img3"><img src="https://picsum.photos/id/1035/400/300" alt="Image 3"></a>
+</div>
+
+<!-- Enlarged Images -->
+<div class="enlarged" id="img1">
+  <a href="#">×</a>
+  <img src="https://picsum.photos/id/1015/800/600" alt="">
+</div>
+
+<div class="enlarged" id="img2">
+  <a href="#">×</a>
+  <img src="https://picsum.photos/id/1025/800/600" alt="">
+</div>
+
+<div class="enlarged" id="img3">
+  <a href="#">×</a>
+  <img src="https://picsum.photos/id/1035/800/600" alt="">
+</div>
+
+<h1>🖼️ Auto Image Slideshow</h1>
+
+<div class="slideshow">
+  <img src="https://picsum.photos/id/1045/1200/675" alt="Slide 1">
+  <img src="https://picsum.photos/id/1055/1200/675" alt="Slide 2">
+  <img src="https://picsum.photos/id/1065/1200/675" alt="Slide 3">
+</div>
+
+</body>
+</html>

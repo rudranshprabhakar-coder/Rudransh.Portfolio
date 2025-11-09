@@ -6,6 +6,43 @@
   <title>Projects — Rudransh Prabhakar</title>
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Thumbnail gallery layout */
+    .work-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .work-gallery a {
+      display: block;
+      width: calc(33.33% - 8px); /* 3 per row, with gap */
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .work-gallery a:hover {
+      transform: scale(1.05);
+    }
+    .work-gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .work-gallery a {
+        width: calc(50% - 8px); /* 2 per row on medium screens */
+      }
+    }
+    @media (max-width: 600px) {
+      .work-gallery a {
+        width: 100%; /* 1 per row on small screens */
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -68,9 +105,9 @@
         <article class="card">
           <div>
             <h4>Cognifyz Technologies — Web Development Intern</h4>
-            <p>Internship (Oct 2025 – Nov 2025). Worked on web development tasks and UI experiments. Below are screenshots from the internship.</p>
+            <p>Internship (Oct 2025 – Nov 2025). Worked on web development tasks and UI experiments. Screenshots from the internship:</p>
             <div class="work-gallery">
-              <a href="Cognifyz Internship Completion letter1.png" data-caption="Cognifyz Internship Certificate" target="_blank"><img src="Cognifyz Internship Completion letter1.png" alt="Cognifyz Internship" /></a>
+              <a href="Cognifyz Internship Completion letter1.png" data-caption="Cognifyz Internship Certificate 1" target="_blank"><img src="Cognifyz Internship Completion letter1.png" alt="Cognifyz Internship 1" /></a>
               <a href="Cognifyz Tech (Intern Completion Cert).png" data-caption="Cognifyz Internship Certificate 2" target="_blank"><img src="Cognifyz Tech (Intern Completion Cert).png" alt="Cognifyz Internship 2" /></a>
             </div>
           </div>
@@ -79,7 +116,7 @@
         <article class="card">
           <div>
             <h4>AMDOX Technologies — Web Developer Intern</h4>
-            <p>Internship (8 Oct 2025 – 8 Dec 2025). Contributed to front-end implementation and responsive layouts.</p>
+            <p>Internship (8 Oct 2025 – 8 Dec 2025). Contributed to front-end implementation and responsive layouts:</p>
             <div class="work-gallery">
               <a href="AMDOX Tech (Offer Letter).png" data-caption="AMDOX Offer Letter" target="_blank"><img src="AMDOX Tech (Offer Letter).png" alt="AMDOX Offer Letter" /></a>
             </div>
@@ -89,7 +126,7 @@
         <article class="card">
           <div>
             <h4>SuPrazo Technology — UI/UX Design (contract/work)</h4>
-            <p>Date: from 10 Sep. Presented prototypes and landing page designs for product UI.</p>
+            <p>Date: from 10 Sep. Presented prototypes and landing page designs for product UI:</p>
             <div class="work-gallery">
               <a href="Suprazo Tech (UI_UX DES).png" data-caption="SuPrazo Design 1" target="_blank"><img src="Suprazo Tech (UI_UX DES).png" alt="SuPrazo Design 1" /></a>
               <a href="Suprazo Tech (UI_UX DES).png2.png" data-caption="SuPrazo Design 2" target="_blank"><img src="Suprazo Tech (UI_UX DES).png2.png" alt="SuPrazo Design 2" /></a>
@@ -117,3 +154,4 @@
   <script src="animations.js"></script>
 </body>
 </html>
+
